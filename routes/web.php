@@ -7,6 +7,9 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home/Index');
 });
+Route::get('/product-details', function () {
+    return Inertia::render('ProductDetails/Index');
+});
 
 Route::get('/shop', function () {
     return Inertia::render('Shop/Index');
@@ -19,6 +22,7 @@ Route::get('/cart', function () {
 Route::get('/wishlist', function () {
     return Inertia::render('Wishlist/Index');
 });
+
 
 Route::get('/checkout', function () {
     return Inertia::render('Checkout/Index');
