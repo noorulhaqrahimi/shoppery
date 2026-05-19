@@ -59,7 +59,7 @@ const Categories = () => {
                         return (
                             <div
                                 key={item.id}
-                                className="group flex h-[210px] w-[200px] flex-col items-center justify-center gap-2 rounded-md border-[1px] border-[#EDEDED] bg-[#FFFFFF] transition-all duration-300 ease-in-out hover:border-[#2C742F] hover:shadow-[0_0_10px_1px_#20B52652]"
+                                className="group flex h-[210px] w-[200px] cursor-pointer flex-col items-center justify-center gap-2 rounded-md border-[1px] border-[#EDEDED] bg-[#FFFFFF] transition-all duration-300 ease-in-out hover:border-[#2C742F] hover:shadow-[0_0_10px_1px_#20B52652]"
                             >
                                 <img src={item.src} alt="icon" />
                                 <h2 className="text-[18px] font-medium leading-[150%] text-[#1A1A1A] transition-all ease-in-out group-hover:text-[#2C742F]">

@@ -3,7 +3,7 @@ import { AnimatedSection } from '@/Components/Layout/AnimatedSection';
 const Trusted = () => {
     return (
         <AnimatedSection className="relative flex justify-center bg-[#F7F7F7]">
-            <section className="px-auto container flex max-w-[1280px] gap-4 px-4 py-20">
+            <section className="container mx-auto flex max-w-[1280px] flex-col items-center gap-9 px-4 py-20 lg:flex-row lg:gap-4">
                 <div className="relative h-[400px] w-[276px]">
                     <img
                         className="relative z-10"
@@ -25,7 +25,7 @@ const Trusted = () => {
                 <div>
                     <img src="/images/Home/Trusted/img2.png" alt="" />
                 </div>
-                <div className="ml-2 flex w-[540px] flex-col justify-between gap-6">
+                <div className="relative z-10 flex w-[440px] flex-col justify-between gap-6 md:w-[540px] lg:ml-2">
                     <h1 className="text-[40px] font-semibold leading-[120%] tracking-[0%]">
                         100% Trusted Organic Food Store
                     </h1>
@@ -74,13 +74,13 @@ const Trusted = () => {
                     </button>
                 </div>
             </section>
-            <div className="absolute left-0 top-6">
+            <div className="absolute left-0 top-6 hidden xl:block">
                 <img src="/images/Home/Trusted/lSideDesign.png" alt="" />
             </div>
-            <div className="absolute bottom-6 left-[60px]">
+            <div className="absolute bottom-6 left-[60px] hidden xl:block">
                 <img src="/images/Home/Trusted/lSideDesign2.png" alt="" />
             </div>
-            <div className="absolute right-[60px] top-[60px]">
+            <div className="absolute right-[60px] top-[60px] hidden xl:block">
                 <img src="/images/Home/Trusted/rSideDesign.png" alt="" />
             </div>
         </AnimatedSection>
