@@ -265,9 +265,9 @@ const topRated = [
 
 const BestSeller2 = () => {
     return (
-        <AnimatedSection>
+        <AnimatedSection className="relative">
             <section className="container mx-auto max-w-7xl px-4 pb-20">
-                <div className="flex w-full justify-between">
+                <div className="flex w-full flex-wrap justify-center gap-4">
                     <div className="flex flex-col gap-4">
                         <h2 className="text-[24px] font-medium leading-[150%] tracking-[0%]">
                             Hot Deals
@@ -487,7 +487,7 @@ const BestSeller2 = () => {
                             );
                         })}
                     </div>
-                    <div className='flex h-[396px] w-[300px] flex-col items-center rounded-md bg-[url("/images/Home/BestSeller/imgbg.png")] px-10'>
+                    <div className='relative z-10 flex h-[396px] w-[300px] flex-col items-center rounded-md bg-[url("/images/Home/BestSeller/imgbg.png")] px-10'>
                         <div className="mt-9 flex flex-col items-center justify-center gap-5">
                             <p className="text-[12px] font-medium leading-[100%] tracking-[3%]">
                                 HOT SALE
@@ -507,6 +507,18 @@ const BestSeller2 = () => {
                     </div>
                 </div>
             </section>
+            <div className="absolute -top-20 left-0 hidden xl:block">
+                <img src="/images/Home/BestSeller/lDesign.png" alt="" />
+            </div>
+            <div className="absolute left-[200px] top-2 hidden xl:block">
+                <img src="/images/Home/BestSeller/lLeaf.png" alt="" />
+            </div>
+            <div className="absolute -top-8 right-0 hidden xl:block">
+                <img src="/images/Home/BestSeller/rDesign.png" alt="" />
+            </div>
+            <div className="absolute bottom-[65px] right-60 z-0 hidden xl:block">
+                <img src="/images/Home/BestSeller/rLeaf.png" alt="" />
+            </div>
         </AnimatedSection>
     );
 };

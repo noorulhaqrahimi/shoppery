@@ -6,6 +6,7 @@ import Categories from './Categories';
 import Experience from './Experience';
 import Hero from './Hero';
 import IntroducingProducts from './IntroducingProducts';
+import News from './News';
 import Offers from './Offers';
 import Services from './Services';
 import Trusted from './Trusted';
@@ -23,6 +24,7 @@ export default function Home() {
             <Offers />
             <BestSellerProducts />
             <BestSeller2 />
+            <News />
             {/* <NewsPopUp /> */}
         </MainLayout>
     );
