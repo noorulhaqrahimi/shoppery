@@ -1,70 +1,61 @@
 import { AnimatedSection } from '@/Components/Layout/AnimatedSection';
+import ProductCard from '../Shop/ProductCard';
 
 const products = [
     {
         id: 1,
-        discount: 'Sale 50%',
-        src: '/images/Home/Products/Fruits/apple.png',
-        name: 'Green Apple',
-        discountPrice: '$14.99',
-        price: '$20.00',
-        star: 4,
+        image: '/images/Home/Products/Fruits/apple.png',
+        title: 'Green Apple',
+        price: '$14.99',
+        oldPrice: '$20.00',
+        stock: false,
     },
     {
         id: 2,
-        src: '/images/Home/Products/Veges/cabbage.png',
-        name: 'Chanise Cabbage',
+        image: '/images/Home/Products/Veges/cabbage.png',
+        title: 'Chanise Cabbage',
         price: '$14.99',
-        star: 4,
+        stock: true,
     },
     {
         id: 3,
-        src: '/images/Home/Products/Veges/capsicum.png',
-        name: 'Green Capsicum',
+        image: '/images/Home/Products/Veges/capsicum.png',
+        title: 'Green Capsicum',
         price: '$14.99',
-        star: 4,
+        stock: true,
     },
     {
         id: 4,
-        src: '/images/Home/Products/Veges/ladiesFinger.png',
-        name: 'Ladies Finger',
+        image: '/images/Home/Products/Veges/ladiesFinger.png',
+        title: 'Ladies Finger',
         price: '$14.99',
-        star: 4,
-    },
-    {
-        id: 5,
-        src: '/images/Home/Products/Fruits/peach.png',
-        name: 'Fresh Peach',
-        price: '$14.99',
-        star: 4,
-    },
-    {
-        id: 6,
-        src: '/images/Home/Products/Fruits/orange.png',
-        name: 'Orange',
-        price: '$14.99',
-        star: 4,
-    },
-    {
-        id: 7,
-        src: '/images/Home/Products/Veges/tomato.png',
-        name: 'Red Tomatos',
-        price: '$14.99',
-        star: 4,
-    },
-    {
-        id: 8,
-        src: '/images/Home/Products/Veges/pepper.png',
-        name: 'Pepper',
-        price: '$14.99',
-        star: 4,
+        stock: true,
     },
 ];
 
 const IntroducingProducts = () => {
     return (
-        <AnimatedSection className="relative z-10 h-[800px]">
-            <section className="container mx-auto px-4 py-20">hello</section>
+        <AnimatedSection className="relative z-10">
+            <section className="container relative z-10 mx-auto flex max-w-7xl flex-col gap-8 px-4 py-20">
+                <div className="flex justify-center gap-6 lg:justify-between">
+                    <h1 className="text-[25px] font-semibold leading-[120%] tracking-[0%] text-[#1A1A1A] md:text-[30px] lg:text-[35px] xl:text-[40px]">
+                        Featured Products
+                    </h1>
+                    <button className="flex items-center gap-2 text-[14px] font-medium leading-[150%] tracking-[0%] text-[#00B207] lg:text-[16px]">
+                        View All{' '}
+                        <div>
+                            <img src="/images/Home/Category/arrow.png" alt="" />
+                        </div>
+                    </button>
+                </div>
+                <div className="flex flex-wrap justify-center gap-6 xl:justify-between">
+                    {products.map((product) => {
+                        return (
+                            <ProductCard key={product.id} product={product} />
+                        );
+                    })}
+                </div>
+            </section>
             <div className="absolute bottom-7 left-0">
                 <img src="/images/Home/Products/sideDesign.png" alt="" />
             </div>

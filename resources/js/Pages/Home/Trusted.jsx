@@ -26,7 +26,7 @@ const Trusted = () => {
                 <div>
                     <img src="/images/Home/Trusted/img2.png" alt="" />
                 </div>
-                <div className="relative z-10 flex w-[440px] flex-col justify-between gap-6 md:w-[540px] lg:ml-2">
+                <div className="relative z-10 flex flex-col justify-between gap-6 md:w-[540px] lg:ml-2">
                     <h1 className="text-[40px] font-semibold leading-[120%] tracking-[0%]">
                         100% Trusted Organic Food Store
                     </h1>

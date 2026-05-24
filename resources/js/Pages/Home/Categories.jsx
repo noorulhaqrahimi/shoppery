@@ -43,7 +43,7 @@ const Categories = () => {
     return (
         <AnimatedSection className="relative bg-[#F7F7F7]">
             <section className="container mx-auto flex max-w-[1280px] flex-col gap-8 px-4 py-20">
-                <div className="flex flex-wrap justify-between">
+                <div className="flex flex-wrap justify-center gap-4 xl:justify-between">
                     <h1 className="text-[25px] font-semibold leading-[120%] tracking-[0%] text-[#1A1A1A] md:text-[30px] lg:text-[35px] xl:text-[40px]">
                         Shop by Top categories
                     </h1>
