@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Hero from './Hero';
 import IntroducingProducts from './IntroducingProducts';
 import News from './News';
+import NewsPopUp from './NewsPopUp';
 import Offers from './Offers';
 import Partners from './Partners';
 import Services from './Services';
@@ -31,7 +32,7 @@ export default function Home() {
             <Testimonials />
             <Video />
             <Partners />
-            {/* <NewsPopUp /> */}
+            <NewsPopUp />
         </MainLayout>
     );
 }
