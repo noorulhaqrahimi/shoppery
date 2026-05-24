@@ -8,9 +8,11 @@ import Hero from './Hero';
 import IntroducingProducts from './IntroducingProducts';
 import News from './News';
 import Offers from './Offers';
+import Partners from './Partners';
 import Services from './Services';
 import Testimonials from './Testimonials';
 import Trusted from './Trusted';
+import Video from './Video';
 
 export default function Home() {
     return (
@@ -27,6 +29,8 @@ export default function Home() {
             <BestSeller2 />
             <News />
             <Testimonials />
+            <Video />
+            <Partners />
             {/* <NewsPopUp /> */}
         </MainLayout>
     );
