@@ -13,7 +13,7 @@ function Counter() {
     };
 
     return (
-        <div className=' flex items-center justify-center h-[50px] w-[124px] gap-3 border-[1px] rounded-[170px]'>
+        <div className=' flex items-center justify-center h-[50px] w-[124px] gap-3 border-[1px] rounded-[170px] lg:w-[180px]'>
             <div>
                 <img className='cursor-pointer' onClick={increase} src="/images/plus.png" alt="" />
             </div>

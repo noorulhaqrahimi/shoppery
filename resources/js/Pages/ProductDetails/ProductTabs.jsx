@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import AdditionalInformation from './AdditionalInformation';
 import PageOne from './PageOne';
@@ -9,7 +10,8 @@ function ProductTabs() {
     return (
         <>
             <div className="border-gray mt-20 flex justify-center gap-5 border-b-[1px] text-[#808080]">
-                <button
+                <motion.button
+                    whileTap={{ scale: 0.8 }}
                     className={
                         Active === 'description'
                             ? 'border-b-2 border-green-600 text-[16px] font-medium text-black'
@@ -18,8 +20,9 @@ function ProductTabs() {
                     onClick={() => setActive('description')}
                 >
                     Descriptions
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                    whileTap={{ scale: 0.8 }}
                     className={
                         Active === 'addational'
                             ? 'border-b-2 border-green-600 text-[16px] font-medium text-black'
@@ -28,8 +31,9 @@ function ProductTabs() {
                     onClick={() => setActive('addational')}
                 >
                     Additional Information
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                    whileTap={{ scale: 0.8 }}
                     className={
                         Active === 'feedback'
                             ? 'border-b-2 border-green-600 text-[16px] font-medium text-black'
@@ -38,7 +42,7 @@ function ProductTabs() {
                     onClick={() => setActive('feedback')}
                 >
                     Customer Feedback
-                </button>
+                </motion.button>
             </div>
 
             <div>
