@@ -1,9 +1,9 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 const images = [
     {
         link: '/images/cabbage1.jpg',
@@ -29,7 +29,7 @@ function VegetableSlider() {
     const [activeImage, setActiveImage] = useState(images[0]);
     return (
         <>
-            <div className="flex ">
+            <div className="flex">
                 <div className="relative">
                     <div className="swiper-button-prev-custom absolute left-10 top-10 z-10 -translate-x-1/2 cursor-pointer">
                         <img src="/images/vectorup.png" alt="" />
@@ -69,11 +69,20 @@ function VegetableSlider() {
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <img
-                        className="h-[270px] w-[400px] sm:h-[300] xl:h-[370px] xl:w-[650px]"
-                        src={activeImage.link}
-                        alt=""
-                    />
+                    <div className="overflow-hidden">
+                        <motion.img
+                            key={activeImage.link}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                duration: 0.4,
+                                ease: 'easeOut',
+                            }}
+                            className="h-[270px] w-[400px] sm:h-[300px] xl:h-[370px] xl:w-[650px]"
+                            src={activeImage.link}
+                            alt=""
+                        />
+                    </div>
                 </div>
             </div>
         </>

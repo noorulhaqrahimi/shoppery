@@ -47,7 +47,7 @@ function ProductDetails() {
                                 stiffness: 130,
                                 damping: 18,
                             }}
-                            className="fixed right-0 z-[60] h-[100vh] w-[70%] bg-white lg:w-[35%]"
+                            className="fixed right-0 z-[60] h-[100vh] w-[70%] bg-white sm:w-[60%] 2xl:w-[35%] lg:w-[40%]"
                         >
                             <div className="px-6">
                                 <div className="mt-6 flex h-20 w-full items-center justify-between">
@@ -113,14 +113,14 @@ function ProductDetails() {
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         transition={{ duration: 0.3 }}
-                                        className="h-[50px] w-[300px] rounded-[43px] bg-[#00B207] font-semibold text-white sm:w-[350px] lg:w-[300px]"
+                                        className="h-[50px] w-[260px] rounded-[43px] bg-[#00B207] font-semibold text-white sm:w-[350px] lg:w-[300px]"
                                     >
                                         Checkout
                                     </motion.button>
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         transition={{ duration: 0.3 }}
-                                        className="h-[50px] w-[300px] rounded-[43px] bg-[#56AC591A] font-semibold text-[#00B207] sm:w-[350px] lg:w-[300px]"
+                                        className="h-[50px] w-[260px] rounded-[43px] bg-[#56AC591A] font-semibold text-[#00B207] sm:w-[350px] lg:w-[300px]"
                                     >
                                         Go To Cart
                                     </motion.button>
@@ -150,15 +150,13 @@ function ProductDetails() {
                 ></Breadcrumb>
                 <Head title="ProductDetails"></Head>
                 <AnimatedSection>
-                    <div className="mx-8 grid grid-cols-1 lg:grid-cols-2">
-                        <div className="h-100vh">
-                            <div className="flex items-center justify-center">
-                                <div>
-                                    <VegetableSlider />
-                                </div>
+                    <div className="mx-10 grid grid-cols-1 lg:grid-cols-2 lg:mx-12 xl:mx-16 2xl:px-[200px]">
+                        <div className="flex items-center justify-center xl:justify-end">
+                            <div>
+                                <VegetableSlider />
                             </div>
                         </div>
-                        <div className="flex flex-col pt-[50px] lg:pt-6 xl:px-20">
+                        <div className="lg:w-[100%] flex flex-col justify-center pt-[50px] lg:pt-6">
                             <div className="flex flex-col items-center lg:items-start">
                                 <div>
                                     <div className="flex items-center gap-4">
@@ -243,7 +241,7 @@ function ProductDetails() {
                                     onClick={() => setShowPopup(true)}
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.3 }}
-                                    className="flex h-[50px] w-[300px] items-center justify-center gap-3 rounded-3xl bg-[#00B207] text-white lg:w-[450px]"
+                                    className="flex h-[50px] w-[300px] items-center justify-center gap-3 rounded-3xl bg-[#00B207] text-white lg:w-[280px]"
                                 >
                                     Add to Cart
                                     <img
@@ -291,7 +289,7 @@ function ProductDetails() {
                     <div className="flex justify-center pb-8 text-[32px] font-semibold">
                         <h1>Related Products</h1>
                     </div>
-                    <RelatedCards/>
+                    <RelatedCards />
                 </AnimatedSection>
             </MainLayout>
         </>
