@@ -34,10 +34,10 @@ export default function Wishlist() {
         return (
             <div className="flex items-center justify-start">
                 <span
-                    className={`h-[30px] rounded px-3 py-1 text-sm ${
+                    className={`h-[25px]  rounded px-3 py-1 text-sm ${
                         status === 'In Stock'
-                            ? 'bg-green-100 text-green-700'
-                            : 'bg-red-100 text-red-700'
+                            ? 'bg-green-100 text-[9px] md:text-[14px] text-green-700'
+                            : 'bg-red-100 text-[8.5px] md:text-[14px] text-red-700'
                     }`}
                 >
                     {status}
@@ -47,12 +47,11 @@ export default function Wishlist() {
     }
     function Button({ button }) {
         return (
-            <a href='/cart'>
-            
+            <a href="/cart">
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
-                    className={`flex h-[50px] w-[300px] items-center justify-center gap-3 rounded-3xl bg-[#00B207] text-white md:h-[45px] md:w-[100px] md:text-[12px] lg:h-[50px] lg:w-[150px] lg:text-[14px] xl:w-[200px] ${
+                    className={`flex h-[50px] max-w-[300px] px-4 items-center justify-center gap-3 rounded-3xl transation duration-300 hover:bg-green-700 bg-[#00B207] text-white ${
                         button === `add to cart`
                             ? `bg-green-700`
                             : `bg-gray-500`
@@ -125,7 +124,7 @@ export default function Wishlist() {
                         </div>
                     </div>
                 </div>
-                <div className="mx-8 my-6 flex flex-col justify-center gap-6 md:hidden">
+                <div className="mx-4 my-6 flex flex-col justify-center gap-6 md:hidden">
                     {cards.map((card, index) => (
                         <div key={index} className="rounded-md border p-4">
                             <div>

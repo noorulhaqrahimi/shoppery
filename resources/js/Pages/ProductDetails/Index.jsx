@@ -10,6 +10,12 @@ import ProductTabs from './ProductTabs';
 import RelatedCards from './RelatedCards';
 
 function ProductDetails() {
+    const [hidden, setHidden] = useState(false);
+    function HandleShow() {
+        setHidden(true);
+    }
+    let cancel1;
+    let cancel2;
     const stars = [
         { link: '/images/star.png' },
         { link: '/images/star.png' },
@@ -27,7 +33,6 @@ function ProductDetails() {
     return (
         <>
             <AnimatePresence>
-                {' '}
                 {showPopup && (
                     <>
                         <motion.div
@@ -63,7 +68,9 @@ function ProductDetails() {
                                         x
                                     </motion.button>
                                 </div>
-                                <div className="flex items-center justify-between pb-2">
+                                <div
+                                    className={`flex items-center justify-between pb-2 ${cancel1 === hidden ? `hidden` : ``}`}
+                                >
                                     <div className="flex items-center">
                                         <img
                                             className="h-[100px] w-[120px]"
@@ -81,6 +88,11 @@ function ProductDetails() {
                                         </div>
                                     </div>
                                     <motion.button
+                                        onClick={() => {
+                                            setHidden(true);
+                                            cancel1 = hidden;
+                                            setHidden(false);
+                                        }}
                                         whileHover={{ scale: 1.2 }}
                                         transition={{ duration: 0.3 }}
                                         className="flex h-[24px] w-[24px] items-center justify-center rounded-xl border-[1px] border-gray-300 font-light font-semibold text-[#666666]"
@@ -88,7 +100,9 @@ function ProductDetails() {
                                         X
                                     </motion.button>
                                 </div>
-                                <div className="flex items-center justify-between border-t">
+                                <div
+                                    className={`border-t1 flex items-center justify-between ${cancel2 === hidden ? `hidden` : ``}`}
+                                >
                                     <div className="flex items-center">
                                         <img
                                             className="h-[120px] w-[120px]"
@@ -106,6 +120,11 @@ function ProductDetails() {
                                         </div>
                                     </div>
                                     <motion.button
+                                        onClick={() => {
+                                            setHidden(true);
+                                            cancel2 = hidden;
+                                            setHidden(false);
+                                        }}
                                         whileHover={{ scale: 1.2 }}
                                         transition={{ duration: 0.3 }}
                                         className="flex h-[24px] w-[24px] items-center justify-center rounded-xl border-[1px] border-gray-300 font-light font-semibold text-[#666666]"
@@ -160,7 +179,7 @@ function ProductDetails() {
                 ></Breadcrumb>
                 <Head title="ProductDetails"></Head>
                 <AnimatedSection>
-                    <div className="mx-10 grid grid-cols-1 lg:mx-12 lg:grid-cols-2 xl:mx-16 2xl:px-[200px]">
+                    <div className="mx-4 grid grid-cols-1 lg:mx-12 lg:grid-cols-2 xl:mx-16 2xl:px-[200px]">
                         <div className="flex items-center justify-center xl:justify-end">
                             <div>
                                 <VegetableSlider />
@@ -173,7 +192,7 @@ function ProductDetails() {
                                         <h1 className="text-[36px] font-semibold">
                                             Chinese Cabbage
                                         </h1>
-                                        <div className="flex h-[30px] w-[80px] items-center justify-center rounded-[3px] bg-[#20B52633] text-[#2C742F]">
+                                        <div className="flex h-[30px] w-[110px] items-center justify-center rounded-[3px] bg-[#20B52633] text-[#2C742F]">
                                             <p>In Stock</p>
                                         </div>
                                     </div>
@@ -245,13 +264,13 @@ function ProductDetails() {
                                     varius magna a consequat pulvinar.
                                 </p>
                             </div>
-                            <div className="flex items-center justify-center gap-3 border-b-[1px] pb-5 pt-5">
+                            <div className="flex items-center justify-around gap-3 border-b-[1px] pb-5 pt-5">
                                 <Counter />
                                 <motion.button
                                     onClick={() => setShowPopup(true)}
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.3 }}
-                                    className="flex h-[50px] w-[300px] items-center justify-center gap-3 rounded-3xl bg-[#00B207] text-white lg:w-[280px]"
+                                    className="flex h-[50px]  w-[190px] sm:w-[250px] lg:w-[300px] items-center justify-center gap-3 rounded-3xl bg-[#00B207] text-white"
                                 >
                                     Add to Cart
                                     <img
@@ -291,7 +310,7 @@ function ProductDetails() {
                     </div>
                 </AnimatedSection>
                 <AnimatedSection>
-                    <div>
+                    <div className='mx-4'>
                         <ProductTabs />
                     </div>
                 </AnimatedSection>
