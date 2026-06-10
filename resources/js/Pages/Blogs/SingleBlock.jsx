@@ -5,6 +5,8 @@ import { MessageSquare, Tag, User } from 'lucide-react';
 import { BsInstagram, BsPinterest, BsTwitter } from 'react-icons/bs';
 import { FaFacebook } from 'react-icons/fa';
 import { IoLink } from 'react-icons/io5';
+import ShopNowBtn from '../Home/ShopNowBtn';
+import CommentSection from './CommentSection';
 
 const SingleBlock = () => {
     return (
@@ -145,7 +147,31 @@ const SingleBlock = () => {
                         nibh ipsum, eget lacinia eros pulvinar a. Integer
                         accumsan arcu nec faucibus ultricies.
                     </p>
-                    <div className="h-[250px] w-full bg-[url(/images/SingleBlog/rec.png)]"></div>
+                    <div className="flex h-[250px] w-full items-center bg-[url(/images/SingleBlog/rec.png)] px-12">
+                        <div className="flex items-center gap-16">
+                            <div className="flex flex-col gap-2">
+                                <p className="text-[14px] font-medium leading-[100%] tracking-[3%] text-[#666666]">
+                                    SUMMER SALES
+                                </p>
+                                <h1 className="mb-4 text-[36px] font-semibold leading-[120%] tracking-[0%] text-white">
+                                    Fresh Fruit
+                                </h1>
+                                <ShopNowBtn />
+                            </div>
+                            <div className="flex h-[91px] w-[91px] flex-col items-center justify-center rounded-full bg-[#1A1A1A]">
+                                <p className="text-[11px] font-medium leading-[110%] tracking-[3%] text-[#B3B3B3]">
+                                    UP TO
+                                </p>
+                                <h2 className="text-[24px] font-semibold leading-[110%] tracking-[0%] text-[#FF8A00]">
+                                    56%
+                                </h2>
+                                <p className="text-[14px] font-normal leading-[110%] tracking-[0%] text-[#B3B3B3]">
+                                    Off
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <CommentSection />
                 </div>
                 <div></div>
             </div>
