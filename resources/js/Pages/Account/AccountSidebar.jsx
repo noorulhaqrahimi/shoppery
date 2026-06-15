@@ -30,7 +30,7 @@ export default function AccountSidebar() {
             icon: '/images/shopping.svg',
         },
         {
-            label: 'Setting',
+            label: 'Settings',
             href: '/settings',
             icon: '/images/settings.svg',
             activeIcon: '/images/settingsblack.svg',
