@@ -41,6 +41,9 @@ Route::get('/orders', function () {
 Route::get('/order-details', function () {
     return Inertia::render('OrderHistory/OrderDetails');
 });
+Route::get('/settings', function () {
+    return Inertia::render('Account/Settings');
+});
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard/Index');
     })->middleware(['auth', 'verified'])->name('dashboard');
