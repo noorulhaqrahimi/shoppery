@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 function Popup({ showPopup, setShowPopup }) {
     if (!showPopup) return null;
     return (
@@ -11,18 +11,26 @@ function Popup({ showPopup, setShowPopup }) {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"
+                        className="fixed inset-0 z-[60] h-full bg-black/40 backdrop-blur-sm"
                     ></motion.div>
                     <motion.div
-                        initial={{ x: '100%' }}
-                        animate={{ x: 0 }}
-                        exit={{ x: '100%' }}
-                        transition={{
-                            type: 'spring',
-                            stiffness: 130,
-                            damping: 18,
+                        initial={{
+                            x: '100%',
+                            scale: 0.98,
                         }}
-                        className="fixed right-0 z-[60] h-[100vh] w-[70%] bg-white sm:w-[60%] lg:w-[40%] 2xl:w-[35]"
+                        animate={{
+                            x: 0,
+                            scale: 1,
+                        }}
+                        exit={{
+                            x: '100%',
+                            scale: 0.98,
+                        }}
+                        transition={{
+                            duration: 0.5,
+                            ease: [0.16, 1, 0.3, 1],
+                        }}
+                        className="fixed inset-y-0 right-0 z-[60] w-[70%] bg-white sm:w-[60%] lg:w-[40%] 2xl:w-[35%]"
                     >
                         <div className="px-6">
                             <div className="mt-6 flex h-20 w-full items-center justify-between">

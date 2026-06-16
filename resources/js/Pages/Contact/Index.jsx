@@ -35,19 +35,7 @@ export default function Contact() {
                 },
             );
     };
-    // const informations = [
-    //     {
-    //         id: '1',
-    //         icon: '',
-    //         text: '2715 Ash Dr. San Jose, South Dakota 83475',
-    //     },
-    //     { id: '2', icon: '', text: 'Proxy@gmail.com Help.proxy@gmail.com' },
-    //     {
-    //         id: '3',
-    //         icon: '',
-    //         text: '(219) 555-0114 (164) 333-0487',
-    //     },
-    // ];
+
     return (
         <MainLayout>
             <Head title="Contact" />
@@ -61,7 +49,7 @@ export default function Contact() {
             />
             <AnimatedSection>
                 <div className="min-w-full py-20">
-                    <div className='flex justify-center'>
+                    <div className="flex justify-center">
                         <div className="mx-4 flex max-w-[1250px] flex-col items-center justify-center gap-10 lg:flex-row">
                             <div className="flex h-[530px] w-full max-w-[600px] flex-col gap-6 rounded-lg bg-white shadow-[0_0_20px_rgba(0,0,0,0.1)] lg:max-w-[312px]">
                                 <div className="flex flex-col items-center justify-center gap-4 pt-10">
