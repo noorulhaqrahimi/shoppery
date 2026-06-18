@@ -7,7 +7,7 @@ const Card2 = () => {
                 <div className="flex justify-start rounded-lg ">
                     <img
                         src="/images/carts/light.png"
-                        className="w-[180px] rounded-s-lg object-cover sm:w-[280px] md:w-[clamp(250px,60vw,330px)]"
+                        className="w-[180px] rounded-s-lg object-cover sm:w-[210px] md:w-[clamp(250px,60vw,330px)]"
                         alt="photo"
                     />
                 </div>
@@ -20,7 +20,7 @@ const Card2 = () => {
                         By Admin - 58 Comments
                     </p>
                     <p className="mt-1 text-[clamp(12px,3vw,15px)] font-bold sm:text-[clamp(14px,3vw,20px)] sm:font-semibold md:text-[clamp(14px,3vw,25px)]">
-                        Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.
+                        Curabitur porttitor orci eget neque accumsan venenatis.
                     </p>
                     <button className="-ml-1 mt-1 md:ml-2 md:mt-4 flex w-[114px] items-center justify-center gap-2 whitespace-nowrap">
                         <span className="text-[clamp(12px,2vw,20px)] font-semibold leading-[120%] tracking-[0%] text-[#00B207] sm:ml-3   sm:text-[clamp(15px,2vw,20px)]">
