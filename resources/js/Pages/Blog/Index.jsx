@@ -4,8 +4,8 @@ import { Head } from '@inertiajs/react';
 import React from 'react'
 import FilterBar from '@/Pages/Blog/FilterBar';
 import Mindex from './Mobile&Tablet/Mindex';
-import News from '@/Pages/Blog/Desktop/Carts';
-
+import Dindex from './Desktop/Dindex';
+import Category from '@/Pages/Blog/Category';
 
 
 
@@ -25,7 +25,14 @@ const Index = () => {
                 <div className="flex flex-col justify-center items-center">
                 <FilterBar />
                 <Mindex />
-                <News />
+                <div className='flex grid-cols-2 gap-9'>
+                    <div>
+                <Category />
+                </div>
+                <div>
+                <Dindex />
+                </div>
+                </div>
                 </div>
             </MainLayout>
   )
