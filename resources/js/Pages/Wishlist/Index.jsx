@@ -2,7 +2,6 @@ import Breadcrumb from '@/Components/Breadcrumb';
 import MainLayout from '@/Components/Layout/MainLayout';
 import { Head } from '@inertiajs/react';
 import { motion } from 'framer-motion';
-
 export default function Wishlist() {
     const cards = [
         {
@@ -47,8 +46,7 @@ export default function Wishlist() {
     }
     function Button({ button }) {
         return (
-            <a href='/cart'>
-            
+            <a href="/cart">
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}

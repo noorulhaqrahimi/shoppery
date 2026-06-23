@@ -14,7 +14,7 @@ function RelatedCards() {
             stock: true,
         },
         {
-            id: 1,
+            id: 2,
 
             title: 'Fresh Cauliflower',
 
@@ -24,7 +24,7 @@ function RelatedCards() {
             stock: true,
         },
         {
-            id: 1,
+            id: 3,
 
             title: 'Green Capsicum',
 
@@ -35,7 +35,7 @@ function RelatedCards() {
             stock: true,
         },
         {
-            id: 1,
+            id: 4,
 
             title: 'Green Capsicum',
 
@@ -47,7 +47,7 @@ function RelatedCards() {
         },
     ];
     return (
-        <div className='grid grid-cols-2 gap-3 md:grid-cols-4 lg:gap-6 mx-8 lg:mx-[50px] xl:mx-[200px] 2xl:mx-[350px]'>
+        <div className="mx-8 grid grid-cols-2 gap-3 md:grid-cols-4 lg:mx-[50px] lg:gap-6 xl:mx-[200px] 2xl:mx-[350px]">
             {contents.map((content) => (
                 <ProductCard key={content.id} product={content} />
             ))}

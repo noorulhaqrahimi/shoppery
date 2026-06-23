@@ -49,7 +49,7 @@ function VegetableSlider() {
                             <SwiperSlide key={index}>
                                 <div
                                     onClick={() => setActiveImage(image)}
-                                    className={`flex cursor-pointer items-center justify-center rounded-lg border p-2 transition-all duration-300 ${
+                                    className={`flex cursor-pointer items-center justify-center rounded-lg border p-2 transition-all duration-300 hover:border-green-500 ${
                                         activeImage === image
                                             ? 'border-green-500'
                                             : 'border-gray-200'
@@ -68,8 +68,8 @@ function VegetableSlider() {
                         <img src="/images/vectordown.png" alt="" />
                     </div>
                 </div>
-                <div className="flex items-center">
-                    <div className="overflow-hidden">
+                <div className="flex w-full items-center justify-center">
+                    <div className="w-full max-w-[650px] overflow-hidden">
                         <motion.img
                             key={activeImage.link}
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -78,7 +78,7 @@ function VegetableSlider() {
                                 duration: 0.4,
                                 ease: 'easeOut',
                             }}
-                            className="h-[270px] w-[400px] sm:h-[300px] xl:h-[370px] xl:w-[650px]"
+                            className="h-[270px] w-full  object-cover sm:h-[320px] lg:h-[370px]"
                             src={activeImage.link}
                             alt=""
                         />
