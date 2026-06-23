@@ -1,6 +1,6 @@
 import { AnimatedSection } from '@/Components/Layout/AnimatedSection';
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
