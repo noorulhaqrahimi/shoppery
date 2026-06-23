@@ -19,6 +19,10 @@ Route::get('/cart', function () {
     return Inertia::render('Cart/Index');
 });
 
+Route::get('/blogs', function () {
+    return inertia::render('Blog/Index');
+});
+
 Route::get('/wishlist', function () {
     return Inertia::render('Wishlist/Index');
 });
