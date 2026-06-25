@@ -1,15 +1,13 @@
 import Breadcrumb from '@/Components/Breadcrumb';
 import { AnimatedSection } from '@/Components/Layout/AnimatedSection';
 import MainLayout from '@/Components/Layout/MainLayout';
-import VegetableSlider from '@/Components/Layout/VegetableSlider';
 import { Head } from '@inertiajs/react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
-import Counter from './Counter';
+import Product from './Product';
 import ProductTabs from './ProductTabs';
 import RelatedCards from './RelatedCards';
 
-function ProductDetails() {
+
+function ProductDetails({ product = [] }) {
     const stars = [
         { link: '/images/star.png' },
         { link: '/images/star.png' },
@@ -23,114 +21,11 @@ function ProductDetails() {
         { link: '/images/insta.svg' },
     ];
     const [showPopup, setShowPopup] = useState(false);
+    console.log(product);
 
     return (
         <>
-            <AnimatePresence>
-                {' '}
-                {showPopup && (
-                    <>
-                        <motion.div
-                            onClick={() => setShowPopup(false)}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm"
-                        ></motion.div>
-                        <motion.div
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{
-                                type: 'spring',
-                                stiffness: 130,
-                                damping: 18,
-                            }}
-                            className="fixed right-0 z-[60] h-[100vh] w-[70%] bg-white sm:w-[60%] 2xl:w-[35%] lg:w-[40%]"
-                        >
-                            <div className="px-6">
-                                <div className="mt-6 flex h-20 w-full items-center justify-between">
-                                    <h1 className="text-[20px] font-medium">
-                                        Shopping Card (2)
-                                    </h1>
-                                    <button
-                                        onClick={() => setShowPopup(false)}
-                                        className="text-[25px] font-light"
-                                    >
-                                        x
-                                    </button>
-                                </div>
-                                <div className="flex items-center justify-between pb-2">
-                                    <div className="flex items-center">
-                                        <img
-                                            className="h-[100px] w-[120px]"
-                                            src="/images/orange.png"
-                                            alt="Oranges"
-                                        />
-                                        <div>
-                                            <p>Fresh Indian Orange</p>
-                                            <p className="font-semibold">
-                                                <span className="font-normal text-[#808080]">
-                                                    1 kg x
-                                                </span>{' '}
-                                                12.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <button className="flex h-[24px] w-[24px] items-center justify-center rounded-xl border-[1px] border-gray-300 font-light font-semibold text-[#666666]">
-                                        X
-                                    </button>
-                                </div>
-                                <div className="flex items-center justify-between border-t">
-                                    <div className="flex items-center">
-                                        <img
-                                            className="h-[120px] w-[120px]"
-                                            src="/images/apple.png"
-                                            alt="Oranges"
-                                        />
-                                        <div>
-                                            <p>Green Apple</p>
-                                            <p className="font-semibold">
-                                                <span className="font-normal text-[#808080]">
-                                                    1 kg x
-                                                </span>{' '}
-                                                14.00
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <button className="flex h-[24px] w-[24px] items-center justify-center rounded-xl border-[1px] border-gray-300 font-light font-semibold text-[#666666]">
-                                        X
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="absolute bottom-10 flex w-full flex-col gap-5 px-6">
-                                <div className="flex justify-between">
-                                    <p>2 Product</p>
-                                    <p className="font-bold">$26.00</p>
-                                </div>
-                                <div className="flex flex-col items-center justify-center gap-2">
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="h-[50px] w-[260px] rounded-[43px] bg-[#00B207] font-semibold text-white sm:w-[350px] lg:w-[300px]"
-                                    >
-                                        Checkout
-                                    </motion.button>
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="h-[50px] w-[260px] rounded-[43px] bg-[#56AC591A] font-semibold text-[#00B207] sm:w-[350px] lg:w-[300px]"
-                                    >
-                                        Go To Cart
-                                    </motion.button>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
-
+            {' '}
             <MainLayout>
                 <Breadcrumb
                     items={[
@@ -149,14 +44,16 @@ function ProductDetails() {
                     backgroundImage="/images/breadcrumbs.png"
                 ></Breadcrumb>
                 <Head title="ProductDetails"></Head>
+                <Product />
                 <AnimatedSection>
-                    <div className="mx-10 grid grid-cols-1 lg:grid-cols-2 lg:mx-12 xl:mx-16 2xl:px-[200px]">
+
+                    <div className="mx-10 grid grid-cols-1 lg:mx-12 lg:grid-cols-2 xl:mx-16 2xl:px-[200px]">
                         <div className="flex items-center justify-center xl:justify-end">
                             <div>
                                 <VegetableSlider />
                             </div>
                         </div>
-                        <div className="lg:w-[100%] flex flex-col justify-center pt-[50px] lg:pt-6">
+                        <div className="flex flex-col justify-center pt-[50px] lg:w-[100%] lg:pt-6">
                             <div className="flex flex-col items-center lg:items-start">
                                 <div>
                                     <div className="flex items-center gap-4">
@@ -245,8 +142,7 @@ function ProductDetails() {
                                 >
                                     Add to Cart
                                     <img
-                                        className="h-4"
-                                        w-4
+                                        className="h-4 w-4"
                                         src="/images/add.png"
                                         alt=""
                                     />
@@ -282,6 +178,7 @@ function ProductDetails() {
                 </AnimatedSection>
                 <AnimatedSection>
                     <div>
+
                         <ProductTabs />
                     </div>
                 </AnimatedSection>

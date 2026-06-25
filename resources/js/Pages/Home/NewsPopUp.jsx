@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 
 export default function NewsPopUp() {
-    // وضعیت باز بودن modal
+  
     const [open, setOpen] = useState(false);
     useEffect(() => {
-        // بعد از 5 ثانیه popup باز شود
+    
         const timer = setTimeout(() => {
             setOpen(true);
         }, 5000);
-        // پاک کردن timer
+
         return () => clearTimeout(timer);
     }, []);
-    // اگر بسته بود چیزی render نکن
+  
     if (!open) return null;
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">

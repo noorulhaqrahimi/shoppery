@@ -1,18 +1,16 @@
 import Breadcrumb from '@/Components/Breadcrumb';
 import MainLayout from '@/Components/Layout/MainLayout';
-import Bannar from './Bannar';
 import { Head } from '@inertiajs/react';
+import Bannar from './Bannar';
 
 import DeliveryCard from './DeliveryCard';
 import FilterBar from './FilterBar';
-import ProductCard from './ProductCard';
 import ProductsGrid from './ProductsGrid';
-import products from './Products';
 
-export default function Index() {
+export default function Index({ products = [] }) {
     return (
         <MainLayout>
-            <Head title='Shop' />
+            <Head title="Shop" />
             <Breadcrumb
                 items={[
                     {
@@ -26,12 +24,11 @@ export default function Index() {
                 backgroundImage="/images/breadcrumbs.png"
             />
 
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col items-center justify-center">
                 <Bannar />
                 <FilterBar />
                 <DeliveryCard />
-                <ProductsGrid
-                products={products} />
+                <ProductsGrid products={products} />
             </div>
         </MainLayout>
     );

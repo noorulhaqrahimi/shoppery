@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 function Counter() {
@@ -7,19 +8,29 @@ function Counter() {
     };
     const decrease = () => {
         setCount(Count - 1);
-        if(Count <= 0){
-          setCount(0)
+        if (Count <= 0) {
+            setCount(0);
         }
     };
 
     return (
-        <div className=' flex items-center justify-center h-[50px] w-[124px] gap-3 border-[1px] rounded-[170px] lg:w-[180px]'>
+        <div className="flex h-[50px] w-[124px] items-center justify-center gap-3 rounded-[170px] border-[1px]">
+            <motion.div>
+                <img
+                    className="transation cursor-pointer duration-300 hover:invert"
+                    onClick={increase}
+                    src="/images/plus.png"
+                    alt=""
+                />
+            </motion.div>
+            <span className="text-[16px]">{Count}</span>
             <div>
-                <img className='cursor-pointer' onClick={increase} src="/images/plus.png" alt="" />
-            </div>
-            <span className='text-[16px]'>{Count}</span>
-            <div>
-              <img className='cursor-pointer' onClick={decrease} src="/images/minus.png" alt="" />
+                <img
+                    className="transation cursor-pointer duration-300 hover:invert"
+                    onClick={decrease}
+                    src="/images/minus.png"
+                    alt=""
+                />
             </div>
         </div>
     );

@@ -49,8 +49,8 @@ export default function Navbar() {
             title: 'Blog',
             href: '/blogs',
             links: [
-                { name: 'Blog Grid', href: '/blogs' },
-                { name: 'Single Block', href: '/blogs/singleBlog' },
+                { name: 'Blog List', href: '/blogs' },
+                { name: 'Latest News', href: '/blogs/latest' },
                 { name: 'Organic Foods', href: '/blogs/organic' },
             ],
         },

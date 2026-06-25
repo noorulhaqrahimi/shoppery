@@ -1,26 +1,94 @@
-import AuthenticatedLayout from '@/Components/Layout/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import Breadcrumb from '@/Components/Breadcrumb';
+import AccountLayout from '@/Components/Layout/AccountLayout';
+import MainLayout from '@/Components/Layout/MainLayout';
+import { Head, router } from '@inertiajs/react';
+import { useState } from 'react';
+import Address from '../Account/Address';
+import AddressModal from '../Account/AddressModal';
+import orders from '../Account/Orders';
+import OrdersTable from '../Account/OrdersTable';
+import Profile from '../Account/Profile';
+import ProfileModal from '../Account/ProfileModel';
 
 export default function Dashboard() {
-    return (
-        <AuthenticatedLayout
-            header={
-                <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                    Dashboard
-                </h2>
-            }
-        >
-            <Head title="Dashboard" />
+    const [editProfile, setEditProfile] = useState(false);
 
-            <div className="py-12">
-                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">
-                            You're logged in!
+    const [user, setUser] = useState({
+        name: 'Dianne Russell',
+        role: 'Customer',
+        img: '/images/profileImg.png',
+    });
+
+    const [address, setAddress] = useState({
+        name: 'Dianne Russell',
+        address: '4140 Parker Rd. Allentown, New Mexico 31134',
+        email: 'dainne.ressel@gmail.com',
+        phone: '(671) 555-0110',
+    });
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    return (
+        <MainLayout>
+            <Head title="Dashboard" />
+            <Breadcrumb
+                items={[
+                    {
+                        label: 'Account',
+                        href: '/account',
+                    },
+                    {
+                        label: 'Dashboard',
+                    },
+                ]}
+                backgroundImage="/images/breadcrumbs.png"
+            />
+
+            <AccountLayout>
+                <div className="grid gap-6 sm:grid-cols-2 md:gap-4">
+                    {' '}
+                    <Profile user={user} onEdit={() => setEditProfile(true)} />
+                    {editProfile && (
+                        <ProfileModal
+                            user={user}
+                            onClose={() => setEditProfile(false)}
+                            onSave={(updatedUser) => {
+                                setUser(updatedUser);
+                                setEditProfile(false);
+                            }}
+                        />
+                    )}
+                    <Address
+                        address={address}
+                        onEdit={() => setIsModalOpen(true)}
+                    />
+                    {isModalOpen && (
+                        <AddressModal
+                            address={address}
+                            onClose={() => setIsModalOpen(false)}
+                            onSave={(updatedAddress) => {
+                                setAddress(updatedAddress);
+                                setIsModalOpen(false);
+                            }}
+                        />
+                    )}
+                    <div className="mt-6 rounded-lg border border-[#E5E5E5] p-4 sm:col-span-2">
+                        <div className="flex items-center justify-between py-4">
+                            <h3 className="text-xl font-medium leading-[150%] text-[#1A1A1A]">
+                                {' '}
+                                Recent Order History
+                            </h3>
+                            <button
+                                onClick={() => router.visit('/orders')}
+                                className="font-base font-medium leading-[150%] text-[#00B207]"
+                            >
+                                View All
+                            </button>
                         </div>
+                        <OrdersTable orders={orders} limit={6} />
                     </div>
                 </div>
-            </div>
-        </AuthenticatedLayout>
+            </AccountLayout>
+        </MainLayout>
     );
 }

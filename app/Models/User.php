@@ -22,6 +22,24 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
+
+    protected $fillable= [
+        'name',
+        'email',
+        'email_verified_at',
+        'password',
+        'remember_token',
+        'lastname',
+        'phonenumber',
+        'profile_image',
+        'age'
+    ];
+
+     protected $hidden = [
+        'password',
+        'remember_token'
+    ];
+
     protected function casts(): array
     {
         return [
@@ -29,4 +47,30 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function review(){
+        return $this->hasOne(Review::class);
+    }
+
+    public function wishlist(){
+        return $this->hasOne(Wishlist::class);
+    }
+
+    public function cart(){
+        return $this->hasOne(Cart::class);
+    }
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
+    public function billings(){
+        return $this->hasMany(Billing::class);
+    }
+    public function addresses(){
+        return $this->hasMany(Address::class);
+    }
+
+
+
+
 }
