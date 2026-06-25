@@ -7,6 +7,7 @@ import { FaFacebook } from 'react-icons/fa';
 import { IoLink } from 'react-icons/io5';
 import ShopNowBtn from '../Home/ShopNowBtn';
 import CommentSection from './CommentSection';
+import Category from '../Blog/Category';
 
 const SingleBlock = () => {
     return (
@@ -26,7 +27,7 @@ const SingleBlock = () => {
                 backgroundImage="/images/Breadcrumbs.png"
             ></Breadcrumb>
 
-            <div className="container mx-auto flex max-w-7xl px-4 py-20">
+            <div className="container mx-auto flex max-w-7xl px-4 py-20 gap-8 flex-col lg:flex-row">
                 <div className="rightIs flex max-w-[872px] flex-col gap-5">
                     <div>
                         <img src="/images/SingleBlog/oranges.png" alt="" />
@@ -173,7 +174,9 @@ const SingleBlock = () => {
                     </div>
                     <CommentSection />
                 </div>
-                <div></div>
+                <div className='w-[400px]'>
+                    <Category/>
+                </div>
             </div>
         </MainLayout>
     );

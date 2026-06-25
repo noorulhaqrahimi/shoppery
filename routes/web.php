@@ -20,6 +20,10 @@ Route::get('/blogs', function () {
     return inertia::render('Blog/Index');
 });
 
+Route::get('/blogs/singleBlog', function () {
+    return inertia::render('Blogs/SingleBlock');
+});
+
 Route::get('/wishlist', function () {
     return Inertia::render('Wishlist/Index');
 });
