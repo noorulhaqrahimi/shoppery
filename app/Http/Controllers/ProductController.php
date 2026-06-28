@@ -11,6 +11,7 @@ class ProductController extends Controller
     public function index(){
         $products = Product::with(['category', 'brand', 'images'])->paginate(12)->through(function ($product){
             return [
+                'id' => $product->id,
                 'title' => $product->name,
                 'subtitle'=>$product->subtitle,
                 'sku' => $product->sku,
