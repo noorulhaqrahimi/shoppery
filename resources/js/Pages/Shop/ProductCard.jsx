@@ -1,6 +1,15 @@
 import { Eye, Heart } from 'lucide-react';
+import { router } from '@inertiajs/react';
 
 const ProductCard = ({ product }) => {
+
+    const addToWishList = (productID) => {
+        router.post('/wishlist', {
+            product_id: productID
+        })
+        console.log(productID);
+    }
+
     return (
         <div className="group relative overflow-hidden rounded-md border bg-white p-4 transition-all duration-300 hover:scale-105 hover:border-green-500 hover:shadow-lg">
             {/* OUT OF STOCK */}
@@ -16,7 +25,7 @@ const ProductCard = ({ product }) => {
             <div className="absolute right-3 top-3 z-20 flex flex-col gap-2">
                 {/* HEART */}
 
-                <button className="hidden h-9 w-9 items-center justify-center rounded-full border bg-white shadow-sm group-hover:flex">
+                <button onClick={() => addToWishList(product.id)} className="hidden h-9 w-9 items-center justify-center rounded-full border bg-white shadow-sm group-hover:flex">
                     <Heart size={18} />
                 </button>
 
